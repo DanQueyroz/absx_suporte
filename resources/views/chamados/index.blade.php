@@ -43,7 +43,7 @@
                         @foreach ($chamados as $chamado)
                             <tr>
                                 <th scope="row">{{ $chamado->id }}</th>
-                                <td>{{ date('d/m/Y') }}</td>
+                                <td>{{ date('d/m/Y', strtotime($chamado->data_do_chamado)) }}</td>
                                 <td>{{ $chamado->user->nome }}</td>
                                 <td>{{ $chamado->user->telefone }}</td>
                                 <td>{{ $chamado->user->assunto }}</td>

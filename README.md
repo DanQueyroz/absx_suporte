@@ -6,7 +6,7 @@
 
 <center>
 
-# Gestão de Vendas de Produtos
+# ABSX Suporte
 
 </center>
 
@@ -14,9 +14,14 @@
 
 ## Descrição
 
-O sistema consiste na abertura de chamados que serão enviados para o vendedor disponível e com menor quantidade de chamdados __em aberto__
+O sistema consiste na abertura de chamados (ticket de suporte) que serão enviados para o vendedor disponível e com a menor quantidade de chamdados __em aberto__.
 
 <br>
+
+## Demo
+Copie e cole o link: http://absxsuporte.herokuapp.com no navegador para um breve teste on-line.
+
+---
 
 ## Requisitos
 
@@ -118,11 +123,11 @@ O sistema consiste na abertura de chamados que serão enviados para o vendedor d
 
     1 - Clone o projeto.
 
-       git clone https://github.com/DanQueyroz/gestao_de_vendas_de_produtos.git
+       git clone https://github.com/DanQueyroz/absx_suporte.git
 
     2 - Acesse o projeto.
 
-        cd gestao_de_vendas_de_produtos
+        cd absx_suporte
 
     3 - Instale as dependências e o framework.
 
@@ -139,15 +144,17 @@ O sistema consiste na abertura de chamados que serão enviados para o vendedor d
 
     7 - Acesse o arquivo __.env__ e configure as variáveis de conexão com o banco de dados de acordo com o criado.
 
+    Exemplo:
+
     <p align="center">
-    <img src="public//images/bd_env.png" alt="Página inicial do sistema">
+    <img src="public/images/bd_env.png" alt="Página inicial do sistema">
     </p>
 
     8 - Execute o comando
 
         php artisan migrate --seed
 
-    ### __Obs:__ Esse comando irá criar todas as tabelas do sistema e ainda popular as tabelas __clientes__ e __produtos__ para que o sistema funcione corretamente. Mas caso deseje também é possível utilizar o script sql disponibilizado na raiz do projeto para fazer o mesmo:
+    ### __Obs:__ Esse comando irá criar todas as tabelas necessárias pelo sistema no banco de dados e ainda popular a tabela __users__  com 3 vendedores previamente.
 
     <br>
 
@@ -158,17 +165,18 @@ O sistema consiste na abertura de chamados que serão enviados para o vendedor d
     10 - Acesse a URL na máquina configurada
 
         localhost:8000
+        ou
+        localhost:8000/chamados
 
     <b> 
 
-    Essa deve ser a página inicial
+    Essa deverá página deverá ser exibida
 
     <p align="center">
-    <img src="public//images/inicial.png" width="800" alt="Página inicial do sistema">
+    <img src="public//images/home.png" width="800" alt="Página inicial do sistema">
     </p>
 
-    ### __Dica:__ É possível executar o comando __php artisan migrate:fresh --seed__ sempre que desejar apagar todos os dados armazenados no banco de dados e popular somente as tabelas clientes e produtos novamente
-
+    ### __Dica:__ É possível executar o comando __php artisan migrate:fresh --seed__ sempre que desejar apagar todos os dados armazenados no banco de dados e repopular a tabela __users__ com os 3 vendedores iniciais. Se preferir pode rodar apenas o comando __php artisan migrate:fresh__, dessa forma não seráo criados dados iniciais.
     <br>
 
 
@@ -181,13 +189,13 @@ O sistema consiste na abertura de chamados que serão enviados para o vendedor d
     <br>
 
     <p align="center">
-    <img src="public//images/php.png" width="170" height="70" title="PHP" alt="PHP">
+    <img src="public/images/php.png" width="170" height="70" title="PHP" alt="PHP">
 
-    <img src="public//images/laravel.png" width="170" height="70" title="Laravel" alt="Laravel">
+    <img src="public/images/laravel.png" width="170" height="70" title="Laravel" alt="Laravel">
 
-    <img src="public//images/mysql.png" width="170" height="70" title="MySQL" alt="MySQL">
+    <img src="public/images/mysql.png" width="170" height="70" title="MySQL" alt="MySQL">
 
-    <img src="public//images/bootstrap.png" width="170" height="70" title="Bootstrap" alt="Bootstrap">
+    <img src="public/images/bootstrap.png" width="170" height="70" title="Bootstrap" alt="Bootstrap">
     </p>
 
     ---

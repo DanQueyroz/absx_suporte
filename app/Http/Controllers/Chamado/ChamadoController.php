@@ -35,7 +35,7 @@ class ChamadoController extends Controller
         try {
 
             // Verificando se o chamado está atrasado
-            if (date('y-m-d', strtotime($request->data)) < date('y-m-d') ) {
+            if (date('Y-m-d', strtotime($request->data)) < date('Y-m-d') ) {
                 $request->status = 'Atrasado';
             }
 
@@ -53,7 +53,7 @@ class ChamadoController extends Controller
             $chamado = new Chamado;
             $chamado->assunto = $request->assunto;
             $chamado->descricao = $request->descricao;
-            $chamado->data_do_chamado = date('y-m-d', strtotime($request->data));
+            $chamado->data_do_chamado = date('Y-m-d', strtotime($request->data));
             $chamado->status = $request->status;
             $chamado->user_id = $vendedor->id;
             $chamado->save();
