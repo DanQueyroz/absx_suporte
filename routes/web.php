@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return redirect()->route('chamados.index');
+});
+
 /**
  * Vendedores
  */
@@ -28,7 +32,7 @@ Route::group(['namespace' => 'Vendedor', 'prefix' => '/vendedores'], function() 
 /**
  * Chamados
  */
-Route::group(['namespace' => 'Chamado'], function() {
+Route::group(['namespace' => 'Chamado', 'prefix' => '/chamados'], function() {
     Route::get('/', 'ChamadoController@index')->name('chamados.index');
     Route::get('/criar', 'ChamadoController@create')->name('chamados.criar');
     Route::post('/adicionar', 'ChamadoController@store')->name('chamados.adicionar');

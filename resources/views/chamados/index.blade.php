@@ -33,6 +33,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @if (!$chamados->count())
+                            <tr>
+                                <th colspan="8">
+                                    <h2 class="my-4">Nenhum chamado aberto</h2>
+                                </th>
+                            </tr>
+                        @endif
                         @foreach ($chamados as $chamado)
                             <tr>
                                 <th scope="row">{{ $chamado->id }}</th>

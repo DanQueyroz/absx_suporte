@@ -39,14 +39,15 @@ class ChamadoController extends Controller
                 $request->status = 'Atrasado';
             }
 
+            // Caso não exista nenhum vendedor cadastrado
+            if (User::where('scope', 'vendedor')->count() == 0) {
+                return redirect()->back()->with('error', 'Desculpe, não existe nenhum vendedor cadastrado para atender o chamado.');    
+            }
+
             // Selecionando o vendedor com o menor número de chamados abertos
             $menor_qtd_chamado = User::min('chamados_abertos');
-            $vendedor = User::where('scope', 'vendedor')->where('chamados_abertos', $menor_qtd_chamado)->first();
 
-            // Caso não exista nenhum vendedor cadastrado
-            if (!$vendedor) {
-                return redirect()->back()->with('error', 'Desculpe, não existe vendedor cadastrados para atender o chamado.');
-            }
+            $vendedor = User::where('scope', 'vendedor')->where('chamados_abertos', $menor_qtd_chamado)->first();   
             
             // Abrindo chamado
             $chamado = new Chamado;
@@ -80,7 +81,7 @@ class ChamadoController extends Controller
             return redirect()->back()->with('success', 'Chamado Nº '.$chamado->id.' encaminhado para o vendedor '.$vendedor->nome.'.');
             
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Desculpe ocorreu um erro no servidor.');
+            return redirect()->back()->with('error', 'Desculpe ocorreu um erro no servidor.'.$e);
         }
     }
 

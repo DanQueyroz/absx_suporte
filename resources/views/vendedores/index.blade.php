@@ -34,6 +34,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @if (!$vendedores->count())
+                            <tr>
+                                <th colspan="9">
+                                    <h2 class="my-4">Nenhum vendedor cadastrado</h2>
+                                </th>
+                            </tr>
+                        @endif
                             @foreach ($vendedores as $vendedor)
                                 <tr>
                                     <th scope="row">{{ $vendedor->id }}</th>
