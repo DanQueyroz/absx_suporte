@@ -7,12 +7,12 @@
                 @include('alerts')
                 <div class="d-flex align-items-center justify-content-between mt-4">
                     <div>
-                        <h3><i class="fas fa-users"></i> Vendedores</h3>
+                        <h3><i class="fas fa-users mr-1"></i> Vendedores</h3>
                     </div>
                     <div>
                         <div class="form-row align-items-center">
                             <div class="col-auto my-1">
-                                <a class="btn btn-dark float-right" href={{ route('vendedores.criar') }}><i class="fas fa-plus"></i> Adicionar</a>
+                                <a class="btn btn-dark float-right" href={{ route('vendedores.criar') }}><i class="fas fa-plus mr-1"></i> Adicionar</a>
                             </div>
                         </div>
                     </div>
@@ -50,11 +50,11 @@
                                     <td>{{ $vendedor->chamados_resolvidos }}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a class="btn btn-sm btn-primary text-white mx-1" title="Editar" href="{{ route('vendedores.editar', [$vendedor->id]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                            <a class="btn text-primary mx-1" data-toggle="tooltip" data-placement="top" title="Editar" href="{{ route('vendedores.editar', [$vendedor->id]) }}"><i class="fas fa-pencil-alt"></i></a>
                                             <form action="{{ route('vendedores.excluir', [$vendedor->id]) }}" method="post">
                                                 @method('DELETE')
                                                 @csrf
-                                                <button type="submit" class="btn btn-sm btn-danger text-white mx-1" title="Excluir" href="" onclick="return confirm(&quot;Deseja realmente excluir o vendedor {{ $vendedor->nome }} ?&quot;)"><i class="fas fa-trash-alt"></i></button>
+                                                <button type="submit" class="btn text-danger mx-1" data-toggle="tooltip" data-placement="top" title="Excluir" href="" onclick="return confirm(&quot;Deseja realmente excluir o vendedor {{ $vendedor->nome }} ?&quot;)"><i class="fas fa-trash-alt"></i></button>
                                             </form>
                                         </div>
                                     </td>
