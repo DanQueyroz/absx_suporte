@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('telefone', 20);
             $table->boolean('status')->default(1);
             $table->string('scope', 50)->default('vendedor');
-            $table->integer('chamadados_abertos')->default(0);
+            $table->integer('chamados_abertos')->default(0);
             $table->integer('chamados_andamento')->default(0);
             $table->integer('chamados_resolvidos')->default(0);
             $table->rememberToken();

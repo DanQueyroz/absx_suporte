@@ -25,7 +25,6 @@ class Chamado extends Model
     protected $fillable = [
         'assunto', 
         'descricao',
-        'observacao',
         'data_do_chamado',
         'status', 
         'user_id', 
