@@ -1,7 +1,7 @@
 
     <!-- Brand Logo -->
     <a href="#" class="brand-link pl-0 pr-1 my-2">
-      <img src="images/logo.jpg" alt="ABSX Suporte Logo" class="brand-image img-circle elevation-3">
+      <img src="{{ asset('images/logo.jpg') }}" alt="ABSX Suporte Logo" class="brand-image img-circle elevation-3">
       <span class="brand-text font-weight-light ml-3">{{env('APP_NAME')}}</span>
     </a>
 
@@ -30,7 +30,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('vendedores.index') }}" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Vendedores

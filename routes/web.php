@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::group(['namespace' => 'Vendedor', 'prefix' => '/vendedores'], function() {
+    Route::get('/', 'VendedorController@index')->name('vendedores.index');
+    Route::get('/criar', 'VendedorController@create')->name('vendedores.criar');
+    Route::post('/adicionar', 'VendedorController@store')->name('vendedores.adicionar');
+    Route::get('/editar/{id}', 'VendedorController@show')->name('vendedores.editar');
+});

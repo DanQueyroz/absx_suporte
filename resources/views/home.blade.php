@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.dashboard')
 
 @section('content')
   <div class="container-fluid">
@@ -10,13 +10,11 @@
             <h3><i class="fas fa-headset"></i> Chamados</h3>
           </div>
           <div>
-              <form>
-                  <div class="form-row align-items-center">
-                    <div class="col-auto my-1">
-                      <button class="btn btn-dark float-right"><i class="fas fa-plus"></i> Abrir chamado</button>
-                    </div>
-                  </div>
-              </form>
+            <div class="form-row align-items-center">
+              <div class="col-auto my-1">
+                <button class="btn btn-dark float-right"><i class="fas fa-plus"></i> Abrir chamado</button>
+              </div>
+            </div>
           </div>
       </div>
       
