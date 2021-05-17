@@ -39,9 +39,9 @@ class ChamadoController extends Controller
                 $request->status = 'Atrasado';
             }
 
-            // Caso não exista nenhum vendedor cadastrado
-            if (User::where('scope', 'vendedor')->count() == 0) {
-                return redirect()->back()->with('error', 'Desculpe, não existe nenhum vendedor cadastrado para atender o chamado.');    
+            // Caso não exista nenhum vendedor cadastrado ou ativo
+            if (User::where('scope', 'vendedor')->where('status', 1)->count() == 0) {
+                return redirect()->back()->with('error', 'Desculpe, não existe nenhum vendedor cadastrado ou ativo para atender o chamado.');    
             }
 
             // Selecionando o vendedor com o menor número de chamados abertos

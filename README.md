@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/images/home.png" width="" alt="Página inicial do sistema">
+  <img src="public/images/abrir_chamado.png" width="" alt="Página inicial do sistema">
 </p>
 
 <br>
@@ -14,7 +14,7 @@
 
 ## Descrição
 
-Sistema simples para registrar e quantificar os atendimentos realizados por colaboradores de uma empresa.
+O sistema consiste na abertura de chamados que serão enviados para o vendedor disponível e com menor quantidade de chamdados __em aberto__
 
 <br>
 

@@ -128,7 +128,7 @@ class VendedorController extends Controller
 
         $chamado = Chamado::where('user_id', $id)->first();
         if ($chamado) {
-            return redirect()->back()->with('error', 'O vendedor '.$vendedor->nome.' está vinculado a chamados.');
+            return redirect()->back()->with('error', 'O vendedor '.$vendedor->nome.' está possue chamado(s) aberto(s).');
         }
 
         try {
