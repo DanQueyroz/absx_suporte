@@ -81,7 +81,7 @@ class ChamadoController extends Controller
             return redirect()->back()->with('success', 'Chamado Nº '.$chamado->id.' encaminhado para o vendedor '.$vendedor->nome.'.');
             
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Desculpe ocorreu um erro no servidor.'.$e);
+            return redirect()->back()->with('error', 'Desculpe ocorreu um erro no servidor.');
         }
     }
 
