@@ -46,7 +46,7 @@
                                 <td>{{ date('d/m/Y', strtotime($chamado->data_do_chamado)) }}</td>
                                 <td>{{ $chamado->user->nome }}</td>
                                 <td>{{ $chamado->user->telefone }}</td>
-                                <td>{{ $chamado->user->assunto }}</td>
+                                <td>{{ $chamado->assunto }}</td>
                                 <td>{{ $chamado->descricao }}</td>
                                 <td>{{ $chamado->status }}</td>
                                 <td>
