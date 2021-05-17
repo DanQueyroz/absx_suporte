@@ -6,17 +6,18 @@
             <div class="col-8 mt-4">
 
                 <div class="card mt-5">
+                    @include('alerts')
                     <div class="card-header">
                         <h3><i class="fas fa-user"></i> Adicionar</h3>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('vendedores.adicionar') }}" method="post">
+                            @csrf
                             
                             @include('vendedores._form')
 
                             <div class="text-center mt-3">
-                                <button type="submit" class="btn btn-lg btn-dark w-100"><i class="fas fa-save mr-1"></i>
-                                    Salvar</button>
+                                <button type="submit" class="btn btn-lg btn-dark w-100"><i class="fas fa-save mr-1"></i>Salvar</button>
                             </div>
                         </form>
                     </div>

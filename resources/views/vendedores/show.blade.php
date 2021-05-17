@@ -10,8 +10,9 @@
                         <h3><i class="fas fa-user"></i> Editar</h3>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
-                            
+                        <form action="{{ route('vendedores.atualizar', [$vendedor->id]) }}" method="post">
+                            @method('PUT')
+                            @csrf
                             @include('vendedores._form')
 
                             <div class="text-center mt-3">

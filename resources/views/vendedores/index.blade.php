@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <!-- Default box -->
+                @include('alerts')
                 <div class="d-flex align-items-center justify-content-between mt-4">
                     <div>
                         <h3><i class="fas fa-users"></i> Vendedores</h3>
@@ -51,7 +51,11 @@
                                     <td>
                                         <div class="btn-group">
                                             <a class="btn btn-sm btn-primary text-white mx-1" title="Editar" href="{{ route('vendedores.editar', [$vendedor->id]) }}"><i class="fas fa-pencil-alt"></i></a>
-                                            <a class="btn btn-sm btn-danger text-white mx-1" title="Excluir" href="" onclick="return confirm(&quot;Deseja realmente excluir o vendedor {{ $vendedor->nome }} ?&quot;)"><i class="fas fa-trash-alt"></i></a>
+                                            <form action="{{ route('vendedores.excluir', [$vendedor->id]) }}" method="post">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-danger text-white mx-1" title="Excluir" href="" onclick="return confirm(&quot;Deseja realmente excluir o vendedor {{ $vendedor->nome }} ?&quot;)"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>
